@@ -1,5 +1,5 @@
 
-#Memory Reallocation Suite
+# Memory Reallocation Suite
 ## The main code is contained in mm.c.
 
 
@@ -7,7 +7,7 @@ HOW TO RUN:
 Use the provided Makefile to compile the program. The main code is contained in mm.c. Run mdriver to test the memory allocation compaction.
 
 
-###Optimizations and Compaction:
+### Optimizations and Compaction:
 
 First, let's talk about malloc. 
 
@@ -37,7 +37,7 @@ In mm_extend_heap, I did something similar where if the requested size of extent
 Inside of mm_free, I also call coalesce so that anything that's freed is guarenteed to have two allocated blocks on either side of it, reducing fragmentation. 
 
 
-###How does realloc work?
+### How does realloc work?
 
 There are two main cases in realloc: 
 
@@ -51,7 +51,7 @@ There are two main cases in realloc:
     	CASE 3: prev is allocated, next is free -- extend size of current to include size of next. split the block.
 
 
-###Heap Checker:
+### Heap Checker:
 
   (1) check to make sure that size is multiple of 8
   (2) make sure there are no overlaps, meaning that current + size is a new block's header.
